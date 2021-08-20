@@ -194,27 +194,13 @@ sudo make uninstall
 
 #### FreeBSD package
 
-Available in [FreeBSD ports](https://www.freshports.org/sysutils/bashtop/)
-
 Install pre-built pacakge
 
 ``` bash
 sudo pkg install bashtop
 ```
 
-#### Arch based
-
-Available in the AUR as [bashtop-git](https://aur.archlinux.org/packages/bashtop-git/)
-
-Available in the Arch Linux repository as [bashtop](https://www.archlinux.org/packages/community/any/bashtop/)
-
 #### Debian based
-
-Available in [official Debian repository](https://tracker.debian.org/pkg/bashtop) since Debian 11
-
-Available for debian/ubuntu from [Azlux's repository](http://packages.azlux.fr/)
-
-Or use quick installation:
 
 >Quick install go to DEB  folder  and type
 
@@ -230,8 +216,6 @@ Or use quick installation:
 
 #### Guix based
 
-Available in [official Guix repository](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/admin.scm) since 6bbd0fd2
-
 >Installation
 
 ``` bash
@@ -239,10 +223,6 @@ guix install bashtop
 ```
 
 #### Ubuntu based
-
-Available in [official Ubuntu repository](https://launchpad.net/ubuntu/+source/bashtop) since Ubuntu 20.10
-
-Available for Ubuntu from [PPA repository](https://code.launchpad.net/~bashtop-monitor/+archive/ubuntu/bashtop)
 
 >Add PPA repository and install bashtop
 
@@ -292,7 +272,7 @@ Config files stored in "$HOME/.config/bashtop" folder
 #### bashtop.cfg: (auto generated if not found)
 
 ```bash
-#? Config file for bashtop v. 0.9.21
+#? Config file for bashtop v. 1.0.0
 
 #* Color theme, looks for a .theme file in "$HOME/.config/bashtop/themes" and "$HOME/.config/bashtop/user_themes"
 #* Should be prefixed with either "themes/" or "user_themes/" depending on location, "Default" for builtin default theme
