@@ -12,26 +12,6 @@
 [![Sponsor](https://img.shields.io/badge/-Sponsor-red?logo=github)](https://github.com/sponsors/aristocratos)
 [![Coffee](https://img.shields.io/badge/-Buy%20me%20a%20Coffee-grey?logo=Ko-fi)](https://ko-fi.com/aristocratos)
 
-# Notice, [python version released!](https://github.com/aristocratos/bpytop) Please get this instead.
-
-[![bpytop](Imgs/bpytop.png)](https://github.com/aristocratos/bpytop)
-
-Bpytop, bashtop python port is now available at https://github.com/aristocratos/bpytop
-
-It's a lot faster and about a third as cpu heavy and has more features, including:
-
-* Mouse support
-
-* Toggleable mini mode
-
-* More customization
-
-* Graphs for memory consumption
-
-It's also a lot easier for me to bug fix and it's the project I'm actively working on, so please try to migrate to bpytop.
-
-#
-
 ## Index
 
 * [Documents](#documents)
@@ -91,14 +71,6 @@ Bug fixes and updates might be slow during normal workdays since I work full tim
 I'm looking into ways of funding this project that would allow me to take off time from my day job to work on this.
 
 Any advice on how to get funding for open source projects is very welcome!
-
-#### Update
-
-You can now sponsor this project through github, see [my sponsors page](https://github.com/sponsors/aristocratos) for options.
-
-Also added donation links for [paypal](https://paypal.me/aristocratos) and [ko-fi](https://ko-fi.com/aristocratos).
-
-Any support is greatly appreciated!
 
 ## Prerequisites
 
