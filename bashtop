@@ -18,7 +18,7 @@
 # shellcheck disable=SC2128 # expanding array without index warning
 
 
-# Copyright 2020 Aristocratos (jakob@qvantnet.com)
+# Copyright 2021 WichtigesYT
 
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -95,7 +95,7 @@ banner=(
 "╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ")
 declare version="0.9.25"
 
-#* Get latest version of BashTOP from https://github.com/aristocratos/bashtop
+#* Get latest version of BashTOP from https://github.com/wichtigesyt/bashtop
 
 declare banner_width=${#banner[0]}
 banner_colors=("#E62525" "#CD2121" "#B31D1D" "#9A1919" "#801414")
@@ -163,7 +163,7 @@ proc_per_core="false"
 #* Optional filter for shown disks, should be names of mountpoints, "root" replaces "/", separate multiple values with space
 disks_filter=""
 
-#* Enable check for new version from github.com/aristocratos/bashtop at start
+#* Enable check for new version from github.com/wichtigesyt/bashtop at start
 update_check="true"
 
 #* Enable graphs with double the horizontal resolution, increases cpu usage
@@ -395,11 +395,11 @@ init_() { #? Collect needed information and set options before startig main loop
 	print -m $(( (tty_height/2-3)+stx++ )) 0 -bg "#00" -fg "#cc" -c -b "Checking network devices..."
 	get_net_device
 
-	#* Check if newer version of bashtop is available from https://github.com/aristocratos/bashtop
+	#* Check if newer version of bashtop is available from https://github.com/wichtigesyt/bashtop
 	if [[ -n $curled && $update_check == "true" ]]; then
 		print -bg "#00" -fg "#30ff50" -r 1 -t "√"
 		print -m $(( (tty_height/2-3)+stx++ )) 0 -bg "#00" -fg "#cc" -c -b "Checking for updates..."
-		if ! get_value -v git_version -ss "$(curl -m 4 --raw -r 0-5000 https://raw.githubusercontent.com/aristocratos/bashtop/master/bashtop 2>/dev/null)" -k "version=" -r "[^0-9.]"; then unset git_version; fi
+		if ! get_value -v git_version -ss "$(curl -m 4 --raw -r 0-5000 https://raw.githubusercontent.com/wichtigesyt/bashtop/master/bashtop 2>/dev/null)" -k "version=" -r "[^0-9.]"; then unset git_version; fi
 	fi
 
 	#* Add update notification to banner if new version is available
@@ -409,7 +409,7 @@ init_() { #? Collect needed information and set options before startig main loop
 		print -v banner_out_up -rs -fg "#80cc80" -r 15 "[${git_version} available!]" -r $((9-${#git_version}))
 		if [[ -n $notifier ]]; then
 			notify-send -u normal\
-			"Bashtop Update!" "New version of Bashtop available\!\nCurrent version: ${version}\n\New version: ${git_version}\nDownload at github.com/aristocratos/bashtop"\
+			"Bashtop Update!" "New version of Bashtop available\!\nCurrent version: ${version}\n\New version: ${git_version}\nDownload at github.com/wichtigesyt/bashtop"\
 			-i face-glasses -t 10000
 		fi
 	else
@@ -3738,7 +3738,7 @@ help_() { #? Shows the help overlay
 		"Interrupt selected process with SIGINT - 2."
 		" "
 		"For bug reporting and project updates, visit:"
-		"\e[1mhttps://github.com/aristocratos/bashtop"
+		"\e[1mhttps://github.com/wichtigesyt/bashtop"
 	)
 
 	if [[ -n $pause_screen ]]; then from_menu=1; fi
@@ -3831,7 +3831,7 @@ options_() { #? Shows the options overlay
 						"\"Default\" for builtin default."
 						" ")
 	if [[ -z $curled ]]; then desc_color_theme+=("Get more themes at:"
-						"https://github.com/aristocratos/bashtop")
+						"https://github.com/wichtigesyt/bashtop")
 	else desc_color_theme+=("\e[1mPress ENTER to download the default themes."
 							"Will overwrite changes made to the default"
 							"themes if not copied to user_themes folder."); fi
@@ -3933,7 +3933,7 @@ options_() { #? Shows the options overlay
 	desc_update_check=( "Check for updates."
 						" "
 						"Enable check for new version from"
-						"github.com/aristocratos/bashtop at start."
+						"github.com/wichtigesyt/bashtop at start."
 						" "
 						"True or False.")
 	desc_hires_graphs=("Enable high resolution graphs."
@@ -4029,12 +4029,12 @@ options_() { #? Shows the options overlay
 			local -a theme_index
 			local git_theme new_themes=0 down_themes=0 new_theme
 			unset 'theme_index[@]' 'desc_color_theme[-1]' 'desc_color_theme[-1]' 'desc_color_theme[-1]' options_out
-			theme_index=($(curl -m 3 --raw https://raw.githubusercontent.com/aristocratos/bashtop/master/themes/index.txt 2>/dev/null))
+			theme_index=($(curl -m 3 --raw https://raw.githubusercontent.com/wichtigesyt/bashtop/master/themes/index.txt 2>/dev/null))
 			if [[ ${theme_index[*]} =~ .theme ]]; then
 				for git_theme in ${theme_index[@]}; do
 					unset new_theme
 					if [[ ! -e "${config_dir}/themes/${git_theme}" ]]; then new_theme=1; fi
-					if curl -m 3 --raw "https://raw.githubusercontent.com/aristocratos/bashtop/master/themes/${git_theme}" >"${config_dir}/themes/${git_theme}" 2>/dev/null; then
+					if curl -m 3 --raw "https://raw.githubusercontent.com/wichtigesyt/bashtop/master/themes/${git_theme}" >"${config_dir}/themes/${git_theme}" 2>/dev/null; then
 						((++down_themes))
 						if [[ -n $new_theme ]]; then
 							((++new_themes))
