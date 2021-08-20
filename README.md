@@ -181,7 +181,7 @@ sudo pkg install coreutils gsed git py37-psutil
 >Clone and install
 
 ``` bash
-git clone https://github.com/aristocratos/bashtop.git
+git clone https://github.com/wichtigesyt/bashtop.git
 cd bashtop
 sudo make install
 ```
@@ -335,7 +335,7 @@ proc_per_core="false"
 #* Optional filter for shown disks, should be names of mountpoints, "root" replaces "/", separate multiple values with space
 disks_filter=""
 
-#* Enable check for new version from github.com/aristocratos/bashtop at start
+#* Enable check for new version from github.com/wichtigesyt/bashtop at start
 update_check="true"
 
 #* Enable graphs with double the horizontal resolution, increases cpu usage
